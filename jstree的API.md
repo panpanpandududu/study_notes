@@ -23,3 +23,8 @@ $element.jstree().get_bottom_selected(true);
 ##### $element.jstree().get_top_checked(true);//获取所有被选中的父级节点
 
 ##### $element.jstree().get_bottom_checked(true);//获取所有被选中的叶节点
+
+```
+
+```
+
