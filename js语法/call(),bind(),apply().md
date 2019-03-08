@@ -7,7 +7,7 @@
 //thisObj指代的是将被用作当前对象的对象  argN指将被传递方法参数序列
 function.call(thisObj[, arg1[, arg2[,...argN]]]);
 //apply()方法
-function.apply(thisObj[, argArray]); //argArray指代序列
+function.apply(thisObj[, argArray]); //argArray指代序列（数组）
 
 ```
 
@@ -18,8 +18,6 @@ f.call(o);
 f.apply(o);
 ```
 
-
-
 #### call()
 
 定义：**调用一个对象的一个方法，用另一个对象替换当前对象**。
@@ -29,6 +27,10 @@ f.apply(o);
 如：`B.call(A,args1,args2); `//A对象调用B对象的方法
 
 **call有两个妙用：1.继承 2.修改函数运行时的this指针**
+
+#### apply()
+
+说明：apply方法传入两个参数，第一个参数作为函数上下文的对象。另外一个作为参数所组成的数组。
 
 
 
