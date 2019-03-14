@@ -53,3 +53,19 @@ console.log(results);// [1, 4, 9, 16]
 
 作用：把数组的某些元素过滤掉，返回剩下的元素
 
+扩展：**用js写出filter原理**
+
+```js
+Array.prototype.myfilter = function(callback){
+    var res = [];
+    for (var i = 0; i < this.length; i++){
+        var v = this[i];
+        if (callback(v, i, this)) res.push(arr[i]);
+    }
+    return res;
+};
+var arr = [1, 2, 3];
+arr.myfilter();
+console.log(arr.myfilter());
+```
+
