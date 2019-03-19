@@ -1,8 +1,20 @@
-### 高阶函数
+# 数组
+
+### 数组的几种迭代方法（forEach、map、filter、reduce、every、some）
+
+#### 1.forEach(让数组中的每一项做一件事)
+
+##### 语法：forEach(function(currentValue,index,arr),thisValue)
+
+| currentValue | 必须，当前元素                     |
+| ------------ | ---------------------------------- |
+| index        | 可选，当前元素的索引值             |
+| arr          | 可选，当前元素所属的数组对象       |
+| thisValue    | 可选，传递给函数的值，一般用this值 |
 
 **定义：一个函数可以接受另一个函数作为参数**
 
-#### 1.map()
+#### 2.map()
 
 语法形式：**List.map(f)**或**map(f,List)**
 
@@ -27,7 +39,7 @@ console.log(results);// [1, 4, 9, 16]
   console.log(r);
 ```
 
-#### 2.reduce()
+#### 3.reduce()
 
 #### //reduce方法也是定义在数组`Array`上
 
@@ -49,7 +61,7 @@ console.log(results);// [1, 4, 9, 16]
   console.log(rs);//10
 ```
 
-#### 3.filter()
+#### 4.filter()
 
 作用：把数组的某些元素过滤掉，返回剩下的元素
 
@@ -67,5 +79,19 @@ Array.prototype.myfilter = function(callback){
 var arr = [1, 2, 3];
 arr.myfilter();
 console.log(arr.myfilter());
+```
+
+```js
+var arr = [1, 2, 3, 3];
+console.log(arr.push(9));
+Array.prototype.insert = function(item, index){
+    // let start=this.slice(0,index);
+    // let end=this.slice(index,this.length);
+    let start = this.filter((v, i) => i < index);
+    let end = this.filter((v, i) => i >= index);
+    return [...start, item, ...end];
+};
+var b = arr.insert(4, 2);
+console.log('this b', b);
 ```
 
